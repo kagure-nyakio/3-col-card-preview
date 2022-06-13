@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* primary colors */
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* neutral colors */
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+
+  /* typography */
+  --fs-main: 0.9375rem;
+  --fs-secondary: 1.875rem;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --ff-primary: 'Lexend Deca', sans-serif;
+  --ff-secondary: 'Big Shoulders Display', cursive;
+
+  /* border-radius */
+  --br-btn: 10000px;
+  --br-card: 10px;
+}
+
+body {
+  color: var(--transparent-white);
+  font-size: var(--fs-main);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+  letter-spacing: .75px;
+  background: var(--very-light-gray);
+}
+
+/* typography */
+h2 {
+  color: var(--very-light-gray);
+  text-transform: uppercase;
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-secondary);
+}
+
+/* layout */
+/* btn */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--transparent-white);
+  padding: .75em 2em;
+  border-radius: var(--br-btn);
+}
+
+.btn:hover,
+.btn:focus {
+  background: none;
+  border: 2px solid var(--very-light-gray);
+  color: var(--very-light-gray)
+}
+
+.btn--orange {
+  color: var(--bright-orange);
+}
+
+.btn--cyan {
+  color: var(--dark-cyan);
+}
+
+.btn--vdcyan {
+  color: var(--very-dark-cyan);
+}
+
+/* main */
+.main {
+  min-height: 100vh;
+  display: flex;
+  place-content: center;
+}
+
+.content {
+  overflow: hidden;
+  width: 90%;
+  margin: 3em 0;
+  border-radius: var(--br-card);
+}
+
+/* sections */
+.content__section {
+  padding: 4em 3em;
+  max-width: 600px;
+  margin: 0 auto
+}
+
+.content__text {
+  margin-bottom: 2em;
+}
+
+.bg--orange {
+  background: var(--bright-orange);
+}
+
+.bg--cyan {
+  background: var(--dark-cyan);
+}
+
+.bg--vdcyan {
+  background: var(--very-dark-cyan);
+}
+
+/* Media Queries */
+@media (min-width: 680px) {
+  .content{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    align-items: center;
+  }
+
+  .content__section {
+    padding: 3em;
+  }
+
+  .btn {
+    padding: .5em 1em;
+    font-size: .85rem;
+  }
+}
